@@ -3,7 +3,7 @@
 
 
 # my shortcuts
-alias web="cd ~/_me_/studio/web/ && echo 'Welcome to the web studio of Standards and Deviations!' && echo '------------------------------------------------------'"
+# alias web="cd ~/_me_/studio/web/ && echo 'Welcome to the web studio of Standards and Deviations!' && echo '------------------------------------------------------'"
 # https://github.com/hub
 alias git=hub
 # https://github.com/DavidSouther/flipflops
@@ -45,9 +45,9 @@ alias s='ssh -l joesepi -i ~/.ssh/id_rsa'
 alias dev29="cd ~/bodega/dev29 && vagrant up && vagrant ssh -c 'sudo chef-client' && vagrant ssh"
 alias devup="cd ~/bodega/dev29 && vagrant up"
 alias b="cd ~/code/be/be.net && echo 'now get to work!'"
-alias netw="cd ~/code/be/be.net && echo 'Watch Out!!' && sh ~/mf/active/studio/web/dotfiles/watcher.sh . sbelsky@dev29.be.lan:/var/www/vhosts/network/sandbox/"
+alias netw="cd ~/code/be/be.net && echo 'Watch Out!!' && sh ~/dotfiles/watcher.sh . sbelsky@dev29.be.lan:/var/www/vhosts/network/sandbox/"
 alias pro="cd ~/code/be/pro2-ui && echo 'go pro!'"
-alias prow="cd ~/code/be/pro2-ui && echo 'Watch Out!!' && sh ~/mf/active/studio/web/dotfiles/watcher.sh ./dist/ sbelsky@dev29.be.lan:/var/www/vhosts/pro2-ui/sandbox/public/"
+alias prow="cd ~/code/be/pro2-ui && echo 'Watch Out!!' && sh ~/dotfiles/watcher.sh ./dist/ sbelsky@dev29.be.lan:/var/www/vhosts/pro2-ui/sandbox/public/"
 
 alias biv='bundle install --path .vendor'
 alias bex='bundle exec'
