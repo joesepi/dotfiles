@@ -6,6 +6,11 @@
 # alias web="cd ~/_me_/studio/web/ && echo 'Welcome to the web studio of Standards and Deviations!' && echo '------------------------------------------------------'"
 # https://github.com/hub
 alias git=hub
+
+# git delete all branches safe to delete
+# http://stackoverflow.com/a/18571517/1766637
+alias gitdel="git branch --merged master | grep -v master | xargs git branch -d"
+
 # https://github.com/DavidSouther/flipflops
 alias ff=flipflops
 # youtube-dl cli ftw
@@ -52,9 +57,23 @@ alias prow="cd ~/code/be/pro2-ui && echo 'Watch Out!!' && sh ~/dotfiles/watcher.
 alias biv='bundle install --path .vendor'
 alias bex='bundle exec'
 
+# boot2docker
+if which boot2docker > /dev/null; then
+  eval "$(boot2docker shellinit &> /dev/null)"
 
-# export PATH="/usr/local/bin:/usr/local/sbin:/Users/cranemes/.nvm/v0.10.28/lib/:$PATH"
-export PATH="/Users/yosep/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin/:$PATH"
+  # Set variables to connect to boot2docker machine
+  export DOCKER_HOST=tcp://192.168.59.103:2376
+  export DOCKER_CERT_PATH=/Users/yosep/.boot2docker/certs/boot2docker-vm
+  export DOCKER_TLS_VERIFY=1
+fi
+docker-clean() { docker rm $(docker ps -a -q); docker rmi $(docker images | grep "^<none>" | awk '{print $3}'); }
+
+docker-enter() {
+  boot2docker ssh '[ -f /var/lib/boot2docker/nsenter ] || docker run --rm -v /var/lib/boot2docker/:/target jpetazzo/nsenter'
+  boot2docker ssh -t sudo /var/lib/boot2docker/docker-enter "$@"
+}
+
+export PATH="/Users/yosep/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
 
 # Add rbenv, if we have/need it
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

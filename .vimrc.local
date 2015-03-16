@@ -5,6 +5,9 @@ set splitright
 " keyboard shortcuts
 inoremap jj <ESC>
 
+" map Ctrl+c to split code completion from delimitMate
+imap <C-c> <CR><Esc>O
+
 " highlight search
 "set hlsearch
 "nmap <leader>hl :let @/ = ""<CR>
@@ -33,6 +36,8 @@ function! s:RemoveConflictingAlignMaps()
 endfunction
 command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
 silent! autocmd VimEnter * RemoveConflictingAlignMaps
+
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " trim trailing white space on save
 autocmd BufWritePre * :silent %s/\s\+$//e
