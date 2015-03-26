@@ -23,6 +23,8 @@
   undopush = push -f origin HEAD^:master
   # Push to origin
   pom = push origin master
+  # Push to origin head
+  poh = push origin head
 
   ci = commit
   st = status
@@ -80,7 +82,7 @@
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
 [push]
-  default = matching
+	default = current
 [credential]
   helper = osxkeychain
 [user]

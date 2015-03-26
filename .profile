@@ -47,15 +47,19 @@ function server() {
 # -------
 alias sshout="sh  ~/mf/active/studio/web/dotfiles/sshout.sh"
 alias s='ssh -l joesepi -i ~/.ssh/id_rsa'
-alias dev29="cd ~/bodega/dev29 && vagrant up && vagrant ssh -c 'sudo chef-client' && vagrant ssh"
-alias devup="cd ~/bodega/dev29 && vagrant up"
-alias b="cd ~/code/be/be.net && echo 'now get to work!'"
-alias netw="cd ~/code/be/be.net && echo 'Watch Out!!' && sh ~/dotfiles/watcher.sh . sbelsky@dev29.be.lan:/var/www/vhosts/network/sandbox/"
-alias pro="cd ~/code/be/pro2-ui && echo 'go pro!'"
-alias prow="cd ~/code/be/pro2-ui && echo 'Watch Out!!' && sh ~/dotfiles/watcher.sh ./dist/ sbelsky@dev29.be.lan:/var/www/vhosts/pro2-ui/sandbox/public/"
-
 alias biv='bundle install --path .vendor'
 alias bex='bundle exec'
+alias dev29="cd ~/bodega/dev29 && vagrant up && vagrant ssh -c 'sudo chef-client' && vagrant ssh"
+alias devup="cd ~/bodega/dev29 && vagrant up"
+alias b2d="boot2docker"
+# Network
+alias b="cd ~/code/be/be.net && echo 'now get to work!'"
+alias netw="cd ~/code/be/be.net && echo 'Watch Out!!' && sh ~/dotfiles/watcher.sh . sbelsky@dev29.be.lan:/var/www/vhosts/network/sandbox/"
+# Pro
+alias pro="cd ~/code/be/pro2-ui && echo 'go pro!'"
+alias prow="cd ~/code/be/pro2-ui && echo 'Watch Out!!' && sh ~/dotfiles/watcher.sh ./dist/ sbelsky@dev29.be.lan:/var/www/vhosts/pro2-ui/sandbox/public/"
+alias figaro="cd ~/code/be && fig-newton up -c fig-newton-configs pro2"
+
 
 # boot2docker
 if which boot2docker > /dev/null; then

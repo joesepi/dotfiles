@@ -3,7 +3,7 @@ set splitbelow
 set splitright
 
 " keyboard shortcuts
-inoremap jj <ESC>
+inoremap <Space><Space> <ESC>
 
 " map Ctrl+c to split code completion from delimitMate
 imap <C-c> <CR><Esc>O
