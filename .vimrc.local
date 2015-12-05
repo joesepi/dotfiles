@@ -3,14 +3,14 @@ set splitbelow
 set splitright
 
 " keyboard shortcuts
-inoremap <Space><Space> <ESC>
+" inoremap <Space><Space> <ESC>
 
 " map Ctrl+c to split code completion from delimitMate
 imap <C-c> <CR><Esc>O
 
 " highlight search
-"set hlsearch
-"nmap <leader>hl :let @/ = ""<CR>
+" set hlsearch
+" nmap <leader>hl :let @/ = ""<CR>
 
 " gui settings
 "if (&t_Co == 256 || has('gui_running'))
@@ -20,6 +20,14 @@ imap <C-c> <CR><Esc>O
     colorscheme monokai
 "  endif
 "endif
+
+" Recommended Settings from Syntastic
+" https://github.com/scrooloose/syntastic#settings
+let g:syntastic_javascript_checkers = ["jscs", "jshint"]
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "
@@ -41,3 +49,8 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " trim trailing white space on save
 autocmd BufWritePre * :silent %s/\s\+$//e
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+

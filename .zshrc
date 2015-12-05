@@ -4,6 +4,6 @@ ZSH=$HOME/.oh-my-zsh
 source ~/.profile
 ZSH_THEME="robbyrussell"
 
-plugins=(git)
+plugins=(git chuck)
 
 source $ZSH/oh-my-zsh.sh

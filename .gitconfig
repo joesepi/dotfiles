@@ -25,11 +25,15 @@
   pom = push origin master
   # Push to origin head
   poh = push origin head
+  # diff against last stash
+  stashdiff = stash show -p stash@{0}
 
+  pr = pull-request
+  pum = pull upstream master
   ci = commit
   st = status
   co = checkout
-  cob = co -b
+  cob = checkout -B
   plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [apply]
@@ -84,7 +88,7 @@
 [push]
 	default = current
 [credential]
-  helper = osxkeychain
+	helper = osxkeychain
 [user]
   name = Joe Sepi
   email = sepi@joesepi.com
