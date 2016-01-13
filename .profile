@@ -19,6 +19,11 @@ alias ff=flipflops
 alias ytf="youtube-dl -F"
 alias ytd="youtube-dl -t -f"
 
+alias me="cd ~/code/me && ls -la && echo '~~~~~~~~' && echo 'fuck off, lahey!'"
+
+# Outlook keeps crashing
+alias outlook="defaults delete com.microsoft.Outlook && killall cfprefsd && open -a Microsoft\ Outlook"
+
 # UTILITIES
 alias psef="ps -ef | grep"
 
