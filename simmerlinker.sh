@@ -1,12 +1,22 @@
-homepath="/Users/some-damn-path"
+# INSTRUCTIONS
+# 1. install oh-my-zsh (see below)
+echo "Dont forget to install oh-my-zsh before running this"
+echo "==> curl -L http://install.ohmyz.sh | sh"
+
+# 1b. install maximum awesome?
+# clone github.com/joesepi/maximum-awesome
+# 2. run rm -rf (see below)
+# 3. edit $homepath in ~/dotfiles/simmerlinker.sh
+# 4. run simmerlinker: > sh ~/dotfiles/simmerlinker.sh
+
+homepath="/Users/sepi"
+
 repopath="$homepath/dotfiles/"
-dotfiles=(".bash_profile" ".bashrc" ".gitconfig" ".gitignore" ".profile" ".vimrc.bundles.local" ".vimrc.local" ".zprofile" ".zshrc")
+dotfiles=(".bash_profile" ".bashrc" ".gitconfig" ".gitignore" ".jscsrc" ".jshintrc" ".profile" ".tern-project" ".vimrc.bundles.local" ".vimrc.local" ".zprofile" ".zshrc")
 
 # TODO backup old files/symlinks
 # rm -rf .bash_profile .bashrc .gitconfig .gitignore .profile .vimrc.bundles.local .vimrc.local .zprofile .zshrc
 
-echo "Dont forget to install oh-my-zsh before running this"
-echo "==> curl -L http://install.ohmyz.sh | sh"
 
 cd "$homepath"
 for i in "${dotfiles[@]}"

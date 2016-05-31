@@ -34,6 +34,8 @@
   st = status
   co = checkout
   cob = checkout -B
+  all = add -A
+  addup = remote add upstream
   plog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [apply]

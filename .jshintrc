@@ -1,0 +1,21 @@
+{
+  "esnext": true,
+  "elision": true,
+  "boss": true,
+  "browser": true,
+  "elision": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  "expr": true,
+  "immed": true,
+  "latedef": false, // disabled until https://github.com/jshint/jshint/issues/2658 is addressed
+  "loopfunc": true,
+  "undef": true,
+  "unused": true,
+  "globals": {
+    "require": false,
+    "requirejs": false,
+    "define": false,
+    "console": false
+  }
+}

@@ -19,13 +19,14 @@ alias ff=flipflops
 alias ytf="youtube-dl -F"
 alias ytd="youtube-dl -t -f"
 
-alias me="cd ~/code/me && ls -la && echo '~~~~~~~~' && echo 'fuck off, lahey!'"
+alias me="cd ~/code/joesepi && ls -la && echo '~~~~~~~~' && echo 'fuck off, lahey!'"
 
 # Outlook keeps crashing
 alias outlook="defaults delete com.microsoft.Outlook && killall cfprefsd && open -a Microsoft\ Outlook"
 
 # UTILITIES
 alias psef="ps -ef | grep"
+alias srcit="source ~/.profile"
 
 function wallpaper() {
   if [ -z "$1" ]
@@ -75,8 +76,10 @@ function dm {
 }
 
 # Network
-alias b="cd ~/code/be/be.net && echo 'now get to work!'"
-alias netw="cd ~/code/be/be.net && echo 'Watch Out!!' && sh ~/dotfiles/watcher.sh . sbelsky@dev29.be.lan:/var/www/vhosts/network/sandbox/"
+alias be="cd ~/code/behance/ && echo 'now get to work!'"
+alias b="cd ~/code/behance/be.net && echo 'what now, tough guy?'"
+alias netw="cd ~/code/behance/be.net && echo 'Watch Out!!' && sh ~/dotfiles/watcher.sh . sbelsky@net.dev.be.lan:/var/www/vhosts/network/sandbox/"
+alias netsass="bundle exec compass watch --sourcemap public/assets/sass"
 # Pro
 alias pro="cd ~/code/behance/pro2-ui && echo 'go pro!'"
 
@@ -96,32 +99,35 @@ function bodega {
   cd -
 }
 
-docker-enter() {
-  boot2docker ssh '[ -f /var/lib/boot2docker/nsenter ] || docker run --rm -v /var/lib/boot2docker/:/target jpetazzo/nsenter'
-  boot2docker ssh -t sudo /var/lib/boot2docker/docker-enter "$@"
+function fsw() {
+  cd ~/code/behance/be.net && fswatch -o . -e .git | xargs -n1 -I{} rsync -avz -e "ssh -p 2222 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" --port 2222 --exclude *.git --exclude *.vagrant . sbelsky@net.dev.be.lan:/var/www/vhosts/$1/sandbox/
 }
 
 # docker-machine
 if which docker-machine > /dev/null; then
   export DOCKER_TLS_VERIFY="1"
   export DOCKER_HOST="tcp://192.168.70.128:2376"
-  export DOCKER_CERT_PATH="/Users/yosep/.docker/machine/machines/dev"
+  export DOCKER_CERT_PATH="/Users/sepi/.docker/machine/machines/dev"
   export DOCKER_MACHINE_NAME="dev"
 fi
 
 docker-clean() { docker rm $(docker ps -a -q); docker rmi $(docker images | grep "^<none>" | awk '{print $3}'); }
 
-export PATH="/Users/yosep/bin:/Users/yosep/.node/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
+export PATH="/usr/local/opt/ccache/libexec:/Users/sepi/bin:/Users/sepi/.node/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:$PATH"
 
 # Add rbenv, if we have/need it
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+eval "$(rbenv init -)"
+
+export PATH="/Users/sepi/.rbenv/shims:${PATH}"
+export RBENV_SHELL=zsh
 
 # from brew's nvm install:
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-export NVM_DIR="$(brew --prefix nvm)"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-export PATH=$PATH:/usr/local/Cellar/nvm/0.25.4/versions/node/v0.12.2/bin
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
+# export NVM_DIR="$(brew --prefix nvm)"; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# export PATH=$PATH:/usr/local/Cellar/nvm/0.25.4/versions/node/v0.12.2/bin
 
 # http://docs.basho.com/riak/latest/ops/tuning/open-files-limit/
-ulimit -n 65536
-ulimit -u 2048
+# ulimit -n 524288
+# ulimit -u 524288
