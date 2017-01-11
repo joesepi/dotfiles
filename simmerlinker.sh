@@ -9,13 +9,13 @@ echo "==> curl -L http://install.ohmyz.sh | sh"
 # 3. edit $homepath in ~/dotfiles/simmerlinker.sh
 # 4. run simmerlinker: > sh ~/dotfiles/simmerlinker.sh
 
-homepath="/Users/sepi"
+homepath="/Users/joesepi"
 
 repopath="$homepath/dotfiles/"
 dotfiles=(".bash_profile" ".bashrc" ".gitconfig" ".gitignore" ".jscsrc" ".jshintrc" ".profile" ".tern-project" ".vimrc.bundles.local" ".vimrc.local" ".zprofile" ".zshrc")
 
 # TODO backup old files/symlinks
-# rm -rf .bash_profile .bashrc .gitconfig .gitignore .profile .vimrc.bundles.local .vimrc.local .zprofile .zshrc
+# rm -rf .bash_profile .bashrc .eslintrc .gitconfig .gitignore .jscsrc .jshintrc .profile .tern-project .vimrc.bundles.local .vimrc.local .zshrc .zprofile
 
 
 cd "$homepath"
