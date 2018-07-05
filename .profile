@@ -2,6 +2,7 @@
 # --------------
 
 alias code="clear && cd ~/code && echo '******************************** \n get to work \n\n********************************' && ls -la"
+alias trash="clear && cd ~/.Trash && echo '******************************** \n dumpster diving! \n\n********************************'"
 
 # https://github.com/hub
 alias git=hub
@@ -23,6 +24,18 @@ alias srcit="source ~/.profile"
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
+# convert files in directory from m4a to mp3
+function m4a() {
+  find . -iname '*.m4a' -exec bash -c 'ffmpeg -i "$1" "${1/m4a/mp3}"' -- {} \;
+}
+
+alias ssh-joesepi="ssh joesepi@ps213317.dreamhostps.com"
+alias ssh-pgg="ssh peekskillgogreen@ps213317.dreamhostps.com"
+
+alias chrome="open -a 'Google Chrome'"
+alias open-chrome="open -a 'Google Chrome' --args --profile-directory=Default"
+alias open-chrome-demo="open -a 'Google Chrome' --args --profile-directory='Profile 1'"
+
 # DOCKER
 alias doco="docker-compose"
 alias docorm="docker rm -fv $(docker ps -aq)"
@@ -35,7 +48,7 @@ function server() {
   python -m SimpleHTTPServer "$port"
 }
 
-export PATH="/Users/joesepi/.gem/bin:/usr/local/opt/ccache/libexec:/Users/sepi/bin:/Users/sepi/.nvm:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/Users/joesepi/.gem/bin:/usr/local/opt/ccache/libexec:/Users/sepi/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:$PATH"
 
 export PATH="/Users/sepi/.rbenv/shims:${PATH}"
 export RBENV_SHELL=zsh
@@ -46,7 +59,5 @@ export RBENV_SHELL=zsh
 export GEM_HOME=~/.gem
 export GEM_PATH=~/.gem
 
-# nvm
-# . ~/.nvm/nvm.sh
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+# fix issue with YouCompleteMe crashing Python on startup
+# export DYLD_FORCE_FLAT_NAMESPACE=1

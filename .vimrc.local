@@ -2,6 +2,9 @@
 set splitbelow
 set splitright
 
+" set soft line breaks
+set linebreak
+
 " keyboard shortcuts
 " inoremap <Space><Space> <ESC>
 
@@ -21,10 +24,7 @@ if (&t_Co == 256 || has('gui_running'))
     colorscheme monokai
   endif
 endif
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set guifont=IBM\ Plex\ Mono\ Light:h12
 
 " syntastic settings for eslint
 " http://usevim.com/2016/03/07/linting/
@@ -75,3 +75,5 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Issue with YouCompleteMe python interpreter issues with HomeBrew Python
+" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
