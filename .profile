@@ -61,3 +61,6 @@ export GEM_PATH=~/.gem
 
 # fix issue with YouCompleteMe crashing Python on startup
 # export DYLD_FORCE_FLAT_NAMESPACE=1
+
+# OpenJDK
+# export PATH="/etc/jdk8u192-b12/Contents/Home/bin:$PATH"
