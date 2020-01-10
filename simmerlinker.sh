@@ -6,13 +6,13 @@ echo "==> curl -L http://install.ohmyz.sh | sh"
 # 1b. install maximum awesome?
 # clone github.com/joesepi/maximum-awesome
 # 2. run rm -rf (see below)
-# 3. edit $homepath in ~/dotfiles/simmerlinker.sh
-# 4. run simmerlinker: > sh ~/dotfiles/simmerlinker.sh
+# 3. edit $homepath in ~/code/dotfiles/simmerlinker.sh
+# 4. run simmerlinker: > sh ~/code/dotfiles/simmerlinker.sh
 
 homepath="/Users/joesepi"
 
-repopath="$homepath/dotfiles/"
-dotfiles=(".bash_profile" ".bashrc" ".gitconfig" ".gitignore" ".jscsrc" ".jshintrc" ".profile" ".tern-project" ".vimrc.bundles.local" ".vimrc.local" ".zprofile" ".zshrc")
+repopath="$homepath/code/dotfiles/"
+dotfiles=(".bash_profile" ".bashrc" ".eslintrc" ".gitconfig" ".gitignore" ".profile" ".tern-project" ".vimrc.bundles.local" ".vimrc.local" ".zprofile" ".zshrc")
 
 # TODO backup old files/symlinks
 # rm -rf .bash_profile .bashrc .eslintrc .gitconfig .gitignore .jscsrc .jshintrc .profile .tern-project .vimrc.bundles.local .vimrc.local .zshrc .zprofile
