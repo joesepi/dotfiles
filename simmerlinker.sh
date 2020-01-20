@@ -12,7 +12,7 @@ echo "==> curl -L http://install.ohmyz.sh | sh"
 homepath="/Users/joesepi"
 
 repopath="$homepath/code/dotfiles/"
-dotfiles=(".bash_profile" ".bashrc" ".eslintrc" ".gitconfig" ".gitignore" ".profile" ".tern-project" ".vimrc.bundles.local" ".vimrc.local" ".zprofile" ".zshrc")
+dotfiles=(".bash_profile" ".gitconfig" ".gitignore" ".profile" ".vimrc.bundles.local" ".vimrc.local" ".zshrc")
 
 # TODO backup old files/symlinks
 # rm -rf .bash_profile .bashrc .eslintrc .gitconfig .gitignore .jscsrc .jshintrc .profile .tern-project .vimrc.bundles.local .vimrc.local .zshrc .zprofile
