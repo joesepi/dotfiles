@@ -19,8 +19,9 @@ alias trash="clear && cd ~/.Trash && echo '******************************** \n d
 
 alias ssh-joesepi="ssh joesepi@ps213317.dreamhostps.com"
 
-# https://github.com/github/hub
+# HUB
 # https://hub.github.com/
+# $ brew install hub
 alias git=hub
 alias gfi="git update-index --assume-unchanged"
 
