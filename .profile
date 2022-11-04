@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias dev="clear && cd ~/code && echo '******************************** \n get to work \n\n********************************' && ls -la"
 alias trash="clear && cd ~/.Trash && echo '******************************** \n dumpster diving! \n\n********************************'"
-
+alias photoexport="cd ~/Desktop/Briefcase/Active/Media/Images/_unkempt/exported/photo-export && . ./npx.sh"
 alias ssh-joesepi="ssh joesepi@ps213317.dreamhostps.com"
 
 # HUB
@@ -51,7 +51,7 @@ function server() {
   python -m SimpleHTTPServer "$port"
 }
 
-export PATH="/Users/joesepi/.gem/bin:/usr/local/opt/ccache/libexec:/Users/sepi/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:$PATH"
+export PATH="/Users/joesepi/.gem/bin:/usr/local/opt/ccache/libexec:/Users/joesepi/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:$PATH"
 
 # RUBY
 # ?? DO I REALLY NEED RUBY?

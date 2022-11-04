@@ -41,6 +41,7 @@
 [apply]
   # Detect whitespace errors when applying a patch
   whitespace = fix
+	whitespace = fix
 
 [core]
   # Use custom `.gitignore` and `.gitattributes`
@@ -94,7 +95,7 @@
 	helper = osxkeychain
 [user]
   name = Joe Sepi
-  email = sepi@joesepi.com
+	email = sepi@joesepi.com
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
@@ -108,3 +109,8 @@
   smudge = git-media-smudge %f
 [help]
   autocorrect = 15
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

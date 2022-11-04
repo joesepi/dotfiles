@@ -70,7 +70,7 @@ silent! autocmd VimEnter * RemoveConflictingAlignMaps
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " trim trailing white space on save
-autocmd BufWritePre * :silent %s/\s\+$//e
+" autocmd BufWritePre * :silent %s/\s\+$//e
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
