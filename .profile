@@ -34,6 +34,7 @@ alias ytf="youtube-dl -F"
 alias ytd="youtube-dl -t -f"
 
 # UTILITIES
+alias mvim="/Applications/MacVim.app/Contents/bin/mvim"
 alias psef="ps -ef | grep"
 alias srcit="source ~/.profile"
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
@@ -51,7 +52,7 @@ function server() {
   python -m SimpleHTTPServer "$port"
 }
 
-export PATH="/Users/joesepi/.gem/bin:/usr/local/opt/ccache/libexec:/Users/joesepi/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:$PATH"
+export PATH="/usr/local/bin:/Users/joesepi/.gem/bin:/usr/local/opt/ccache/libexec:/Users/joesepi/bin:/usr/local/sbin:/usr/bin:$PATH"
 
 # RUBY
 # ?? DO I REALLY NEED RUBY?
