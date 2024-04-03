@@ -48,8 +48,8 @@
   excludesfile = ~/.gitignore
   attributesfile = ~/.gitattributes
   # Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
-        # editor = /usr/bin/vim
-	editor = /usr/local/bin/vim
+        editor = /usr/bin/vim
+        # editor = /usr/local/bin/vim
 
 [color]
   # Use colors in Git commands that are capable of colored output when outputting to the terminal
@@ -114,3 +114,16 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+
+[user]
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINxmGHOKRGJEqH4uTUUhZin/n3u3wSNQ9j82eGMOfwz9
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+
