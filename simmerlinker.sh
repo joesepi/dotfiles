@@ -1,21 +1,15 @@
-# INSTRUCTIONS
-# 1. install oh-my-zsh (see below)
-echo "Dont forget to install oh-my-zsh before running this"
-echo "==> curl -L http://install.ohmyz.sh | sh"
+# TODO: make this an interactive shell where it asks for homepath and repo path with current values as default
 
-# 1b. install maximum awesome?
-# clone github.com/joesepi/maximum-awesome
-# 2. run rm -rf (see below)
-# 3. edit $homepath in ~/code/dotfiles/simmerlinker.sh
-# 4. run simmerlinker: > sh ~/code/dotfiles/simmerlinker.sh
+# To run script: `sh ~/code/dotfiles/simmerlinker.sh`
 
+# Would this work better using the tilde (~) or did I already try that and it breaks for some reason?
 homepath="/Users/joesepi"
 
 repopath="$homepath/code/dotfiles/"
 dotfiles=(".bash_profile" ".gitconfig" ".gitignore" ".profile" ".vimrc.bundles.local" ".vimrc.local" ".zshrc")
 
-# TODO backup old files/symlinks
-# rm -rf .bash_profile .bashrc .eslintrc .gitconfig .gitignore .jscsrc .jshintrc .profile .tern-project .vimrc.bundles.local .vimrc.local .zshrc .zprofile
+# backup existing files/symlinks
+mv .bash_profile .gitconfig .gitignore .profile .vimrc.bundles.local .vimrc.local .zshrc $repopath/backup
 
 
 cd "$homepath"
